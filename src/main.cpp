@@ -2,35 +2,35 @@
 #include <iostream>
 #include <mygame/temp/Dummy.hpp>
 
-using namespace std;
+#include <mygame/application/Application.hpp>
 
-enum class Temp
-{
-    aaa,
-    bbb
-};
+using namespace std;
 
 int main()
 {
-    temp::Dummy dummy;
-    dummy.hello();
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    // temp::Dummy dummy;
+    // dummy.hello();
+    // sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    // sf::CircleShape shape(100.f);
+    // shape.setFillColor(sf::Color::Green);
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-            {
-                window.close();
-            }
-        }
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
+    // while (window.isOpen())
+    // {
+    //     sf::Event event;
+    //     while (window.pollEvent(event))
+    //     {
+    //         if (event.type == sf::Event::Closed)
+    //         {
+    //             window.close();
+    //         }
+    //     }
+    //     window.clear();
+    //     window.draw(shape);
+    //     window.display();
+    // }
+
+    auto app = std::make_unique<application::Application>();
+    app->start();
+
     return 0;
 }
