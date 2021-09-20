@@ -15,10 +15,10 @@ enum class FigureType
     King
 };
 
-class Figure
+class FigureBase
 {
 public:
-    Figure(FigureType type);
+    FigureBase(FigureType type);
 
     FigureType getType();
 

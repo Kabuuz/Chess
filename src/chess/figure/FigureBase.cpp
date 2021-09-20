@@ -4,12 +4,12 @@ namespace chess
 {
 namespace figure
 {
-Figure::Figure(FigureType type)
+FigureBase::FigureBase(FigureType type)
     : type_(type)
 {
 }
 
-FigureType Figure::getType()
+FigureType FigureBase::getType()
 {
     return type_;
 }
