@@ -9,6 +9,7 @@ target_sources(${LIB_NAME}
     ${INCLUDE_DIR}/mygame/chess/figure/KnightFigure.hpp
     ${INCLUDE_DIR}/mygame/chess/figure/PawnFigure.hpp
     ${INCLUDE_DIR}/mygame/chess/figure/RookFigure.hpp
+    ${INCLUDE_DIR}/mygame/chess/figure/QueenFigure.hpp
 
     PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/FigureBase.cpp
@@ -16,6 +17,7 @@ target_sources(${LIB_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/KnightFigure.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/PawnFigure.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/RookFigure.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/QueenFigure.cpp
     )
 
 target_include_directories(${LIB_NAME}
