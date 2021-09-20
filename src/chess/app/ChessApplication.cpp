@@ -1,7 +1,9 @@
 #include <SFML/Graphics.hpp>
-#include <mygame/chess/ChessApplication.hpp>
+#include <mygame/chess/app/ChessApplication.hpp>
 
 namespace chess
+{
+namespace app
 {
 void ChessApplication::start() const
 {
@@ -26,4 +28,5 @@ void ChessApplication::start() const
     }
 }
 
+}  // namespace app
 }  // namespace chess

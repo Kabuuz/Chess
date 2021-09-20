@@ -1,9 +1,11 @@
-#ifndef INC_MYGAME_CHESS_CHESSAPPLICATION
-#define INC_MYGAME_CHESS_CHESSAPPLICATION
+#ifndef INC_MYGAME_CHESS_APP_CHESSAPPLICATION
+#define INC_MYGAME_CHESS_APP_CHESSAPPLICATION
 
 #include <mygame/application/Application.hpp>
 
 namespace chess
+{
+namespace app
 {
 class ChessApplication : public application::Application
 {
@@ -12,7 +14,7 @@ public:
 
     virtual void start() const override;
 };
-
+}  // namespace app
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_CHESSAPPLICATION
+#endif  // INC_MYGAME_CHESS_APP_CHESSAPPLICATION

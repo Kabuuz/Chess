@@ -9,7 +9,8 @@ add_library(mainlib STATIC)
 target_link_libraries(mainlib PUBLIC
     temp_lib
     application_lib
-    chess_lib
+    chess_app_lib
+    chess_figure_lib
     )
 
 set(SOURCE_FILES
