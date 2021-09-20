@@ -1,6 +1,7 @@
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_subdirectory(application)
+add_subdirectory(chess)
 add_subdirectory(temp)
 
 add_library(mainlib STATIC)
@@ -8,6 +9,7 @@ add_library(mainlib STATIC)
 target_link_libraries(mainlib PUBLIC
     temp_lib
     application_lib
+    chess_lib
     )
 
 set(SOURCE_FILES

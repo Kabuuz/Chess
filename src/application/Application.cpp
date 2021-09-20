@@ -1,36 +1,30 @@
-#include <mygame/application/Application.hpp>
-
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include <mygame/application/Application.hpp>
 
 namespace application
 {
+void Application::exit() const
+{
+    std::cout << "Exiting with code: " << static_cast<int>(status_) << std::endl;
+}
 
-    void Application::start() const
+void Application::setApplicationStatus(ApplicationStatus status)
+{
+    switch (status)
     {
-//TODO create proper function body
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-            {
-                window.close();
-            }
-        }
-        window.clear();
-        window.draw(shape);
-        window.display();
+        case ApplicationStatus::NoError:
+            //TODO
+            break;
+        case ApplicationStatus::Warning:
+            //TODO
+            break;
+        case ApplicationStatus::Fatal:
+            //TODO
+            break;
+        default:
+            break;
     }
-    }
+}
 
-    void Application::exit() const
-    {
-//
-    }
-
-}   // namespace application
+}  // namespace application

@@ -1,35 +1,12 @@
-#include <SFML/Graphics.hpp>
 #include <iostream>
-#include <mygame/temp/Dummy.hpp>
-
-#include <mygame/application/Application.hpp>
+#include <mygame/application/fwd.hpp>
+#include <mygame/chess/ChessApplication.hpp>
 
 using namespace std;
 
 int main()
 {
-    // temp::Dummy dummy;
-    // dummy.hello();
-    // sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    // sf::CircleShape shape(100.f);
-    // shape.setFillColor(sf::Color::Green);
-
-    // while (window.isOpen())
-    // {
-    //     sf::Event event;
-    //     while (window.pollEvent(event))
-    //     {
-    //         if (event.type == sf::Event::Closed)
-    //         {
-    //             window.close();
-    //         }
-    //     }
-    //     window.clear();
-    //     window.draw(shape);
-    //     window.display();
-    // }
-
-    auto app = std::make_unique<application::Application>();
+    application::IApplicationPtr app = std::make_unique<chess::ChessApplication>();
     app->start();
 
     return 0;
