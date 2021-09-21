@@ -22,6 +22,8 @@ public:
 
     FigureType getType();
 
+    virtual ~FigureBase() = default;
+
 private:
     FigureType type_;
 };
