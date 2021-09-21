@@ -10,7 +10,7 @@ namespace figure
 class RookFigure : public FigureBase
 {
 public:
-    RookFigure();
+    RookFigure(FigureColor color);
 };
 
 }  // namespace figure

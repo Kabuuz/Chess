@@ -10,7 +10,7 @@ namespace figure
 class BishopFigure : public FigureBase
 {
 public:
-    BishopFigure();
+    BishopFigure(FigureColor color);
 };
 
 }  // namespace figure

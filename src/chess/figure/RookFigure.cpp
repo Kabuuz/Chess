@@ -4,8 +4,8 @@ namespace chess
 {
 namespace figure
 {
-RookFigure::RookFigure()
-    : FigureBase(FigureType::Rook)
+RookFigure::RookFigure(FigureColor color)
+    : FigureBase(FigureType::Rook, color)
 {
 }
 

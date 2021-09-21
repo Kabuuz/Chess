@@ -10,7 +10,7 @@ namespace figure
 class QueenFigure : public FigureBase
 {
 public:
-    QueenFigure();
+    QueenFigure(FigureColor color);
 };
 
 }  // namespace figure

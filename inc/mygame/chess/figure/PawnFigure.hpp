@@ -10,7 +10,7 @@ namespace figure
 class PawnFigure : public FigureBase
 {
 public:
-    PawnFigure();
+    PawnFigure(FigureColor color);
 };
 
 }  // namespace figure

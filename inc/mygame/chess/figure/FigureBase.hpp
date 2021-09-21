@@ -15,17 +15,25 @@ enum class FigureType
     King
 };
 
+enum class FigureColor
+{
+    Black,
+    White
+};
+
 class FigureBase
 {
 public:
-    FigureBase(FigureType type);
+    FigureBase(FigureType type, FigureColor color);
 
     FigureType getType();
+    FigureColor getColor();
 
     virtual ~FigureBase() = default;
 
 private:
     FigureType type_;
+    FigureColor color_;
 };
 
 }  // namespace figure

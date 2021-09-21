@@ -4,8 +4,8 @@ namespace chess
 {
 namespace figure
 {
-KnightFigure::KnightFigure()
-    : FigureBase(FigureType::Knight)
+KnightFigure::KnightFigure(FigureColor color)
+    : FigureBase(FigureType::Knight, color)
 {
 }
 

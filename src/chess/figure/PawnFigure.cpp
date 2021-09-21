@@ -4,8 +4,8 @@ namespace chess
 {
 namespace figure
 {
-PawnFigure::PawnFigure()
-    : FigureBase(FigureType::Pawn)
+PawnFigure::PawnFigure(FigureColor color)
+    : FigureBase(FigureType::Pawn, color)
 {
 }
 
