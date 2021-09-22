@@ -10,8 +10,8 @@ target_link_libraries(mainlib PUBLIC
     temp_lib
     application_lib
     chess_app_lib
-    chess_board_lib
     chess_figure_lib
+    chess_table_lib
     )
 
 set(SOURCE_FILES
