@@ -9,6 +9,7 @@ target_link_libraries(mainlib PUBLIC
     application_lib
     chess_app_lib
     chess_figure_lib
+    chess_movement_lib
     chess_table_lib
     )
 
