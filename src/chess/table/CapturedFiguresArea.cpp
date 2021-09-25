@@ -29,6 +29,12 @@ void CapturedFiguresArea::add(figure::FigureBase* figure)
         return;
     }
 
+    if (figure->getColor() != color_)
+    {
+        std::cout << "[ERR][CapturedFiguresArea] add : color of figure does not match with area" << std::endl;
+        return;
+    }
+
     auto iter = std::find(figures_.begin(), figures_.end(), figure);
 
     if (iter == figures_.end())

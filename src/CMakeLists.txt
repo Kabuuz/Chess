@@ -2,12 +2,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_subdirectory(application)
 add_subdirectory(chess)
-add_subdirectory(temp)
 
 add_library(mainlib STATIC)
 
 target_link_libraries(mainlib PUBLIC
-    temp_lib
     application_lib
     chess_app_lib
     chess_figure_lib
