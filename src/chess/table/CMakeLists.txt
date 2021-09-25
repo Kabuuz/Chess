@@ -6,10 +6,12 @@ target_sources(${LIB_NAME}
     PUBLIC
     ${INCLUDE_DIR}/mygame/chess/table/Board.hpp
     ${INCLUDE_DIR}/mygame/chess/table/CapturedFiguresArea.hpp
+    ${INCLUDE_DIR}/mygame/chess/table/Table.hpp
 
     PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/Board.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/CapturedFiguresArea.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Table.cpp
     )
 
 target_include_directories(${LIB_NAME}
