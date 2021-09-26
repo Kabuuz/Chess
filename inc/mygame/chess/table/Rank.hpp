@@ -1,6 +1,8 @@
 #ifndef INC_MYGAME_CHESS_TABLE_RANK
 #define INC_MYGAME_CHESS_TABLE_RANK
 
+#include <cstdio>
+
 namespace chess
 {
 namespace table
@@ -10,7 +12,8 @@ class Rank
 public:
     Rank(int rank);
 
-    operator int();
+    operator int() const;
+    operator std::size_t() const;
 
     friend bool operator==(const Rank& rank1, const Rank& rank2);
     friend bool operator==(int rank1, const Rank& rank2);

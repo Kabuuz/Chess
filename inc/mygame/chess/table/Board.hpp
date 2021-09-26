@@ -3,6 +3,8 @@
 
 #include <array>
 #include <mygame/chess/figure/FigureBase.hpp>
+#include <mygame/chess/table/File.hpp>
+#include <mygame/chess/table/Rank.hpp>
 
 namespace chess
 {
@@ -19,13 +21,10 @@ class Board
 public:
     Board();
 
-    figure::FigureBase* getFigure(unsigned int rank, char file);  //rank - rzad, file - kolumna
-    void setFigure(figure::FigureBase* figure, unsigned int rank, char file);
+    figure::FigureBase* getFigure(const Rank& rank, const File& file);  //rank - rzad, file - kolumna
+    void setFigure(figure::FigureBase* figure, const Rank& rank, const File& file);
 
 private:
-    unsigned int convertRankToIndex(unsigned int rank);
-    unsigned int convertFileToIndex(char file);
-
     std::array<std::array<figure::FigureBase*, BOARD_HEIGHT>, BOARD_WIDTH> figures_;
 };
 }  // namespace table

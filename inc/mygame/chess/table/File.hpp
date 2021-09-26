@@ -1,6 +1,8 @@
 #ifndef INC_MYGAME_CHESS_TABLE_FILE
 #define INC_MYGAME_CHESS_TABLE_FILE
 
+#include <cstdio>
+
 namespace chess
 {
 namespace table
@@ -11,8 +13,9 @@ public:
     File(int file);
     File(char file);
 
-    operator int();
-    operator char();
+    operator int() const;
+    operator char() const;
+    operator std::size_t() const;
 
     friend bool operator==(const File& file1, const File& file2);
     friend bool operator==(char file1, const File& file2);

@@ -9,9 +9,14 @@ Rank::Rank(int rank)
 {
 }
 
-Rank::operator int()
+Rank::operator int() const
 {
     return rank_;
+}
+
+Rank::operator std::size_t() const
+{
+    return rank_ - 1;
 }
 
 bool operator==(const Rank& rank1, const Rank& rank2)

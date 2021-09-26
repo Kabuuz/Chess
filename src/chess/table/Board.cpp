@@ -9,24 +9,14 @@ Board::Board()
 {
 }
 
-figure::FigureBase* Board::getFigure(unsigned int rank, char file)
+figure::FigureBase* Board::getFigure(const Rank& rank, const File& file)
 {
-    return figures_.at(convertRankToIndex(rank)).at(convertFileToIndex(file));
+    return figures_.at(rank).at(file);
 }
 
-void Board::setFigure(figure::FigureBase* figure, unsigned int rank, char file)
+void Board::setFigure(figure::FigureBase* figure, const Rank& rank, const File& file)
 {
-    figures_.at(convertRankToIndex(rank)).at(convertFileToIndex(file)) = figure;
-}
-
-unsigned int Board::convertRankToIndex(unsigned int rank)
-{
-    return rank - 1;
-}
-
-unsigned int Board::convertFileToIndex(char file)
-{
-    return static_cast<unsigned int>(file) - 97;
+    figures_.at(rank).at(file) = figure;
 }
 
 }  // namespace table

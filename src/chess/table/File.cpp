@@ -29,14 +29,19 @@ File::File(char file)
     }
 }
 
-File::operator int()
+File::operator int() const
 {
     return file_;
 }
 
-File::operator char()
+File::operator char() const
 {
     return static_cast<char>(file_ + ASCII_a - 1);
+}
+
+File::operator std::size_t() const
+{
+    return file_ - 1;
 }
 
 bool operator==(const File& file1, const File& file2)
