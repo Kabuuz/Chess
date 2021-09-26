@@ -10,11 +10,10 @@ namespace chess
 {
 namespace table
 {
-namespace
-{
-constexpr unsigned int BOARD_WIDTH = 8;
-constexpr unsigned int BOARD_HEIGHT = 8;
-}  // namespace
+constexpr int BOARD_WIDTH = 8;
+constexpr int BOARD_HEIGHT = 8;
+constexpr int MINIMAL_RANK = 1;
+constexpr char MINIMAL_FILE = 'A';
 
 class Board
 {
