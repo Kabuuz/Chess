@@ -1,17 +1,32 @@
+#include <ctype.h>
+
 #include <mygame/chess/table/File.hpp>
 
 namespace chess
 {
 namespace table
 {
+namespace
+{
+constexpr int ASCII_a = static_cast<int>('a');
+}
+
 File::File(int file)
     : file_(file)
 {
 }
 
 File::File(char file)
-    : file_(static_cast<int>(file) - 96)
+
 {
+    if (isalpha(file))
+    {
+        file_ = static_cast<int>(tolower(file)) - ASCII_a + 1;
+    }
+    else
+    {
+        file_ = -1;
+    }
 }
 
 File::operator int()
@@ -21,7 +36,28 @@ File::operator int()
 
 File::operator char()
 {
-    return static_cast<char>(file_ + 96);
+    return static_cast<char>(file_ + ASCII_a - 1);
+}
+
+bool operator==(const File& file1, const File& file2)
+{
+    return file1.file_ == file2.file_;
+}
+bool operator==(char file1, const File& file2)
+{
+    return file1 == static_cast<char>(const_cast<File&>(file2));
+}
+bool operator==(const File& file1, char file2)
+{
+    return static_cast<char>(const_cast<File&>(file1)) == file2;
+}
+bool operator==(int file1, const File& file2)
+{
+    return file1 == file2.file_;
+}
+bool operator==(const File& file1, int file2)
+{
+    return file1.file_ == file2;
 }
 
 }  // namespace table

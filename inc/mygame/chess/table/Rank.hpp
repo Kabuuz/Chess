@@ -12,6 +12,10 @@ public:
 
     operator int();
 
+    friend bool operator==(const Rank& rank1, const Rank& rank2);
+    friend bool operator==(int rank1, const Rank& rank2);
+    friend bool operator==(const Rank& rank1, int rank2);
+
 private:
     int rank_;
 };
