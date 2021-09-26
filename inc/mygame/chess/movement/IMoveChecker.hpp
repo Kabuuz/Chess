@@ -1,17 +1,21 @@
 #ifndef INC_MYGAME_CHESS_MOVEMENT_IMOVECHECKER
 #define INC_MYGAME_CHESS_MOVEMENT_IMOVECHECKER
 
+#include <mygame/chess/table/File.hpp>
+#include <mygame/chess/table/Rank.hpp>
+#include <utility>
+#include <vector>
+
 namespace chess
 {
 namespace movement
 {
+using Position = std::pair<table::Rank, table::File>;
+
 class IMoveChecker
 {
 public:
-    //TODO
-    /*
-        Add method which will return vector of pairs (rank, file) with available moves
-    */
+    virtual std::vector<Position> getAvailablePositions(const Position& actualPosition) const = 0;
 
     virtual ~IMoveChecker() = default;
 };
