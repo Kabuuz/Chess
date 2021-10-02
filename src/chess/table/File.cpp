@@ -44,6 +44,32 @@ File::operator std::size_t() const
     return file_ - 1;
 }
 
+File& File::operator--()
+{
+    file_--;
+    return *this;
+}
+
+File& File::operator++()
+{
+    file_++;
+    return *this;
+}
+
+File File::operator--(int)
+{
+    File temp = *this;
+    --(*this);
+    return temp;
+}
+
+File File::operator++(int)
+{
+    File temp = *this;
+    ++(*this);
+    return temp;
+}
+
 bool operator==(const File& file1, const File& file2)
 {
     return file1.file_ == file2.file_;
@@ -63,6 +89,16 @@ bool operator==(int file1, const File& file2)
 bool operator==(const File& file1, int file2)
 {
     return file1.file_ == file2;
+}
+
+bool operator>=(const File& file, const int value)
+{
+    return file.file_ >= value;
+}
+
+bool operator<(const File& file, const int value)
+{
+    return file.file_ < value;
 }
 
 }  // namespace table

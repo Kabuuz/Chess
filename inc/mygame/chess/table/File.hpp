@@ -17,11 +17,20 @@ public:
     operator char() const;
     operator std::size_t() const;
 
+    // TODO add tests to ++ and -- operators
+    File& operator--();
+    File& operator++();
+    File operator--(int);
+    File operator++(int);
+
+    // TODO add tests to >= and < opertors, try to remove additional == operators
     friend bool operator==(const File& file1, const File& file2);
     friend bool operator==(char file1, const File& file2);
     friend bool operator==(const File& file1, char file2);
     friend bool operator==(int file1, const File& file2);
     friend bool operator==(const File& file1, int file2);
+    friend bool operator>=(const File& file, const int value);
+    friend bool operator<(const File& file, const int value);
 
 private:
     int file_;
