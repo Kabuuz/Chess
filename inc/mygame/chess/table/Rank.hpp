@@ -21,12 +21,14 @@ public:
     Rank operator--(int);
     Rank operator++(int);
 
-    // TODO add tests to >= and < opertors, try to remove additional == operators
+    // TODO add tests to >=, < and + opertors, try to remove additional == operators
     friend bool operator==(const Rank& rank1, const Rank& rank2);
     friend bool operator==(int rank1, const Rank& rank2);
     friend bool operator==(const Rank& rank1, int rank2);
     friend bool operator>=(const Rank& rank, const int value);
     friend bool operator<(const Rank& rank, const int value);
+    friend bool operator<(const Rank& rank, const int value);
+    friend Rank operator+(const Rank& rank, const int value);
 
 private:
     int rank_;

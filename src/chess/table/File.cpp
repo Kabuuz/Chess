@@ -101,5 +101,10 @@ bool operator<(const File& file, const int value)
     return file.file_ < value;
 }
 
+File operator+(const File& file, const int value)
+{
+    return File(file.file_ + value);
+}
+
 }  // namespace table
 }  // namespace chess

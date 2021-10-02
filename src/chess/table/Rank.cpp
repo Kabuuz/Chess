@@ -70,5 +70,10 @@ bool operator<(const Rank& rank, const int value)
     return rank.rank_ < value;
 }
 
+Rank operator+(const Rank& rank, const int value)
+{
+    return Rank(rank.rank_ + value);
+}
+
 }  // namespace table
 }  // namespace chess

@@ -31,6 +31,7 @@ public:
     friend bool operator==(const File& file1, int file2);
     friend bool operator>=(const File& file, const int value);
     friend bool operator<(const File& file, const int value);
+    friend File operator+(const File& file, const int value);
 
 private:
     int file_;

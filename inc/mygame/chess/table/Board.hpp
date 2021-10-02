@@ -12,8 +12,8 @@ namespace table
 {
 constexpr int BOARD_WIDTH = 8;
 constexpr int BOARD_HEIGHT = 8;
-constexpr int MINIMAL_RANK = 1;
-constexpr char MINIMAL_FILE = 'A';
+const Rank MINIMAL_RANK = 1;
+const File MINIMAL_FILE = 'A';
 
 class Board
 {
