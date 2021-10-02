@@ -91,6 +91,15 @@ TEST_F(FileTests, ShouldAddInt)
     EXPECT_EQ(sut, 2 * VALUE);
 }
 
+TEST_F(FileTests, ShouldSubtractInt)
+{
+    const int VALUE = 1;
+    File sut = VALUE;
+    sut = sut - VALUE;
+
+    EXPECT_EQ(sut, 0);
+}
+
 class FileTestsParametrized : public ::testing::TestWithParam<std::tuple<int, char, char>>
 {
 protected:

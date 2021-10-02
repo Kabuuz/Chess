@@ -26,18 +26,10 @@ std::vector<Position> RookMoveChecker::getAvailablePositions(const Position& act
     return availablePositions;
 }
 
-//TODO remove this comment
-//Z Board.hpp
-// constexpr int BOARD_WIDTH = 8;
-// constexpr int BOARD_HEIGHT = 8;
-// constexpr int MINIMAL_RANK = 1;
-// constexpr char MINIMAL_FILE = 'A';
-
 std::vector<Position> RookMoveChecker::getPositionsInFile(const table::Rank& rank, const table::File& file) const
 {
     std::vector<Position> availablePositions;
 
-    //TODO
     // check for this file and:
     // 1) rank >= MINIMAL_RANK (without current rank)
     // 2) rank < MINIMAL_RANK + BOARD_HEIGHT (without current rank)
@@ -85,7 +77,6 @@ std::vector<Position> RookMoveChecker::getPositionsInRank(const table::Rank& ran
 {
     std::vector<Position> availablePositions;
 
-    //TODO
     // check for this rank and:
     // 1) file >= MINIMAL_FILE (without current file)
     // 2) file < MINIMAL_FILE + BOARD_WIDTH (without current file)

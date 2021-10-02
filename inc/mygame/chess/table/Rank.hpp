@@ -28,6 +28,7 @@ public:
     friend bool operator<(const Rank& rank, int value);
     friend bool operator<(const Rank& rank, int value);
     friend Rank operator+(const Rank& rank, int value);
+    friend Rank operator-(const Rank& rank, int value);
 
 private:
     int rank_;

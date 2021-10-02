@@ -90,5 +90,14 @@ TEST_F(RankTests, ShouldAddInt)
     EXPECT_EQ(sut, 2 * VALUE);
 }
 
+TEST_F(RankTests, ShouldSubtractInt)
+{
+    const int VALUE = 1;
+    Rank sut = VALUE;
+    sut = sut - VALUE;
+
+    EXPECT_EQ(sut, 0);
+}
+
 }  // namespace table
 }  // namespace chess

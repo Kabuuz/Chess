@@ -106,5 +106,10 @@ File operator+(const File& file, int value)
     return File(file.file_ + value);
 }
 
+File operator-(const File& file, int value)
+{
+    return File(file.file_ - value);
+}
+
 }  // namespace table
 }  // namespace chess

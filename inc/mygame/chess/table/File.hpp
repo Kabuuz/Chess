@@ -32,6 +32,7 @@ public:
     friend bool operator>=(const File& file, int value);
     friend bool operator<(const File& file, int value);
     friend File operator+(const File& file, int value);
+    friend File operator-(const File& file, int value);
 
 private:
     int file_;

@@ -70,5 +70,10 @@ Rank operator+(const Rank& rank, int value)
     return Rank(rank.rank_ + value);
 }
 
+Rank operator-(const Rank& rank, int value)
+{
+    return Rank(rank.rank_ - value);
+}
+
 }  // namespace table
 }  // namespace chess
