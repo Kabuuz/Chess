@@ -23,6 +23,74 @@ TEST_F(FileTests, ShouldReturnMinusOneOnWrongChar)
     EXPECT_EQ(sut, ERROR);
 }
 
+TEST_F(FileTests, ShouldPreIncrement)
+{
+    const int VALUE = 1;
+    File sut = VALUE;
+
+    EXPECT_EQ(++sut, VALUE + 1);
+}
+
+TEST_F(FileTests, ShouldPostIncrement)
+{
+    const int VALUE = 1;
+    File sut = VALUE;
+
+    EXPECT_EQ(sut++, VALUE);
+    EXPECT_EQ(sut, VALUE + 1);
+}
+
+TEST_F(FileTests, ShouldPreDecrement)
+{
+    const int VALUE = 1;
+    File sut = VALUE;
+
+    EXPECT_EQ(--sut, VALUE - 1);
+}
+
+TEST_F(FileTests, ShouldPostDecrement)
+
+{
+    const int VALUE = 1;
+    File sut = VALUE;
+
+    EXPECT_EQ(sut--, VALUE);
+    EXPECT_EQ(sut, VALUE - 1);
+}
+
+TEST_F(FileTests, ShouldCompareWithRank)
+{
+    const int VALUE = 1;
+    File sut = VALUE;
+
+    EXPECT_EQ(sut, File(VALUE));
+}
+
+TEST_F(FileTests, ShouldCompareGreaterEqualThanInt)
+{
+    const int VALUE = 1;
+    File sut = VALUE + 1;
+
+    EXPECT_GE(sut, VALUE);
+}
+
+TEST_F(FileTests, ShouldCompareLessThanInt)
+{
+    const int VALUE = 1;
+    File sut = VALUE - 1;
+
+    EXPECT_LT(sut, VALUE);
+}
+
+TEST_F(FileTests, ShouldAddInt)
+{
+    const int VALUE = 1;
+    File sut = VALUE;
+    sut = sut + VALUE;
+
+    EXPECT_EQ(sut, 2 * VALUE);
+}
+
 class FileTestsParametrized : public ::testing::TestWithParam<std::tuple<int, char, char>>
 {
 protected:

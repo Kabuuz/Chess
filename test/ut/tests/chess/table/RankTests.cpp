@@ -14,7 +14,7 @@ protected:
     }
 };
 
-TEST_F(RankTests, ShouldConvertInt)
+TEST_F(RankTests, ShouldConvertAndCompareWithInt)
 {
     const int VALUE = 1;
     Rank sut = VALUE;
@@ -63,14 +63,6 @@ TEST_F(RankTests, ShouldCompareWithRank)
     Rank sut = VALUE;
 
     EXPECT_EQ(sut, Rank(VALUE));
-}
-
-TEST_F(RankTests, ShouldCompareWithInt)
-{
-    const int VALUE = 1;
-    Rank sut = VALUE;
-
-    EXPECT_EQ(sut, VALUE);
 }
 
 TEST_F(RankTests, ShouldCompareGreaterEqualThanInt)
