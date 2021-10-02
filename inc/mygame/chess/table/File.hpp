@@ -29,9 +29,9 @@ public:
     friend bool operator==(const File& file1, char file2);
     friend bool operator==(int file1, const File& file2);
     friend bool operator==(const File& file1, int file2);
-    friend bool operator>=(const File& file, const int value);
-    friend bool operator<(const File& file, const int value);
-    friend File operator+(const File& file, const int value);
+    friend bool operator>=(const File& file, int value);
+    friend bool operator<(const File& file, int value);
+    friend File operator+(const File& file, int value);
 
 private:
     int file_;

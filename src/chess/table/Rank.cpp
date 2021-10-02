@@ -50,27 +50,22 @@ bool operator==(const Rank& rank1, const Rank& rank2)
     return rank1.rank_ == rank2.rank_;
 }
 
-bool operator==(int rank1, const Rank& rank2)
+bool operator==(const Rank& rank1, int value)
 {
-    return rank1 == static_cast<int>(const_cast<Rank&>(rank2));
+    return static_cast<int>(const_cast<Rank&>(rank1)) == value;
 }
 
-bool operator==(const Rank& rank1, int rank2)
-{
-    return static_cast<int>(const_cast<Rank&>(rank1)) == rank2;
-}
-
-bool operator>=(const Rank& rank, const int value)
+bool operator>=(const Rank& rank, int value)
 {
     return rank.rank_ >= value;
 }
 
-bool operator<(const Rank& rank, const int value)
+bool operator<(const Rank& rank, int value)
 {
     return rank.rank_ < value;
 }
 
-Rank operator+(const Rank& rank, const int value)
+Rank operator+(const Rank& rank, int value)
 {
     return Rank(rank.rank_ + value);
 }

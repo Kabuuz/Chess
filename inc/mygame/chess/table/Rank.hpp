@@ -23,12 +23,11 @@ public:
 
     // TODO add tests to >=, < and + opertors, try to remove additional == operators
     friend bool operator==(const Rank& rank1, const Rank& rank2);
-    friend bool operator==(int rank1, const Rank& rank2);
-    friend bool operator==(const Rank& rank1, int rank2);
-    friend bool operator>=(const Rank& rank, const int value);
-    friend bool operator<(const Rank& rank, const int value);
-    friend bool operator<(const Rank& rank, const int value);
-    friend Rank operator+(const Rank& rank, const int value);
+    friend bool operator==(const Rank& rank1, int value);
+    friend bool operator>=(const Rank& rank, int value);
+    friend bool operator<(const Rank& rank, int value);
+    friend bool operator<(const Rank& rank, int value);
+    friend Rank operator+(const Rank& rank, int value);
 
 private:
     int rank_;

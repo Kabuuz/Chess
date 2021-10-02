@@ -91,17 +91,17 @@ bool operator==(const File& file1, int file2)
     return file1.file_ == file2;
 }
 
-bool operator>=(const File& file, const int value)
+bool operator>=(const File& file, int value)
 {
     return file.file_ >= value;
 }
 
-bool operator<(const File& file, const int value)
+bool operator<(const File& file, int value)
 {
     return file.file_ < value;
 }
 
-File operator+(const File& file, const int value)
+File operator+(const File& file, int value)
 {
     return File(file.file_ + value);
 }
