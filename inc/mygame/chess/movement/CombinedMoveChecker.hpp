@@ -12,9 +12,11 @@ class CombinedMoveChecker : public IMoveChecker
 {
 public:
     CombinedMoveChecker();
+    CombinedMoveChecker(const CombinedMoveChecker& other);
 
     std::vector<Position> getAvailablePositions(const Position& actualPosition) const override;
     void addChecker(std::unique_ptr<IMoveChecker> checker);
+    std::unique_ptr<IMoveChecker> clone() const override;
 
 private:
     std::vector<std::unique_ptr<IMoveChecker>> checkers_;

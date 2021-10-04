@@ -13,8 +13,10 @@ class PawnMoveChecker : public IMoveChecker
 {
 public:
     PawnMoveChecker(table::Board& board, figure::FigureColor color);
+    PawnMoveChecker(const PawnMoveChecker& other);
 
     std::vector<Position> getAvailablePositions(const Position& actualPosition) const override;
+    std::unique_ptr<IMoveChecker> clone() const override;
 
 private:
     std::vector<Position> getPositionsForWhitePawn(const Position& actualPosition) const;

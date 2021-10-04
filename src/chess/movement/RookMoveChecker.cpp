@@ -9,6 +9,11 @@ RookMoveChecker::RookMoveChecker(table::Board& board)
 {
 }
 
+RookMoveChecker::RookMoveChecker(const RookMoveChecker& other)
+    : board_(other.board_)
+{
+}
+
 std::vector<Position> RookMoveChecker::getAvailablePositions(const Position& actualPosition) const
 {
     std::vector<Position> availablePositions;
@@ -118,6 +123,11 @@ std::vector<Position> RookMoveChecker::getPositionsInRank(const table::Rank& ran
     }
 
     return availablePositions;
+}
+
+std::unique_ptr<IMoveChecker> RookMoveChecker::clone() const
+{
+    return std::unique_ptr<IMoveChecker>(new RookMoveChecker(*this));
 }
 
 }  // namespace movement

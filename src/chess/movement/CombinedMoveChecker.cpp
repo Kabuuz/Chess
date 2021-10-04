@@ -8,6 +8,14 @@ namespace movement
 {
 CombinedMoveChecker::CombinedMoveChecker() = default;
 
+CombinedMoveChecker::CombinedMoveChecker(const CombinedMoveChecker& other)
+{
+    for (const auto& checker : other.checkers_)
+    {
+        checkers_.push_back(checker->clone());
+    }
+}
+
 std::vector<Position> CombinedMoveChecker::getAvailablePositions(const Position& actualPosition) const
 {
     std::vector<Position> availablePositions;
@@ -27,6 +35,11 @@ std::vector<Position> CombinedMoveChecker::getAvailablePositions(const Position&
 void CombinedMoveChecker::addChecker(std::unique_ptr<IMoveChecker> checker)
 {
     checkers_.push_back(std::move(checker));
+}
+
+std::unique_ptr<IMoveChecker> CombinedMoveChecker::clone() const
+{
+    return std::unique_ptr<IMoveChecker>(new CombinedMoveChecker(*this));
 }
 
 }  // namespace movement

@@ -9,6 +9,11 @@ BishopMoveChecker::BishopMoveChecker(table::Board& board)
 {
 }
 
+BishopMoveChecker::BishopMoveChecker(const BishopMoveChecker& other)
+    : board_(other.board_)
+{
+}
+
 std::vector<Position> BishopMoveChecker::getAvailablePositions(const Position& actualPosition) const
 {
     std::vector<Position> availablePositions;
@@ -129,6 +134,11 @@ std::vector<Position> BishopMoveChecker::getBottomLeftPositions(const table::Ran
     }
 
     return availablePositions;
+}
+
+std::unique_ptr<IMoveChecker> BishopMoveChecker::clone() const
+{
+    return std::unique_ptr<IMoveChecker>(new BishopMoveChecker(*this));
 }
 
 }  // namespace movement

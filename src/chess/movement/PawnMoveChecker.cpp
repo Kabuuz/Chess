@@ -9,6 +9,11 @@ PawnMoveChecker::PawnMoveChecker(table::Board& board, figure::FigureColor color)
 {
 }
 
+PawnMoveChecker::PawnMoveChecker(const PawnMoveChecker& other)
+    : board_(other.board_), color_(other.color_)
+{
+}
+
 std::vector<Position> PawnMoveChecker::getAvailablePositions(const Position& actualPosition) const
 {
     if (color_ == figure::FigureColor::White)
@@ -61,5 +66,11 @@ std::vector<Position> PawnMoveChecker::getPositionsForBlackPawn(const Position& 
 
     return availablePositions;
 }
+
+std::unique_ptr<IMoveChecker> PawnMoveChecker::clone() const
+{
+    return std::unique_ptr<IMoveChecker>(new PawnMoveChecker(*this));
+}
+
 }  // namespace movement
 }  // namespace chess

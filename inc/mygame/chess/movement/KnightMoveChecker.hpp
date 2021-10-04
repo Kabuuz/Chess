@@ -13,8 +13,10 @@ class KnightMoveChecker : public IMoveChecker
 {
 public:
     KnightMoveChecker(table::Board& board);
+    KnightMoveChecker(const KnightMoveChecker& other);
 
     std::vector<Position> getAvailablePositions(const Position& actualPosition) const override;
+    std::unique_ptr<IMoveChecker> clone() const override;
 
 private:
     table::Board& board_;

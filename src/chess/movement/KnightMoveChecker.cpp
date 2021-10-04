@@ -9,6 +9,11 @@ KnightMoveChecker::KnightMoveChecker(table::Board& board)
 {
 }
 
+KnightMoveChecker::KnightMoveChecker(const KnightMoveChecker& other)
+    : board_(other.board_)
+{
+}
+
 std::vector<Position> KnightMoveChecker::getAvailablePositions(const Position& actualPosition) const
 {
     std::vector<Position> availablePositions;
@@ -39,6 +44,11 @@ std::vector<Position> KnightMoveChecker::getAvailablePositions(const Position& a
     }
 
     return availablePositions;
+}
+
+std::unique_ptr<IMoveChecker> KnightMoveChecker::clone() const
+{
+    return std::unique_ptr<IMoveChecker>(new KnightMoveChecker(*this));
 }
 
 }  // namespace movement

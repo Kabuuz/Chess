@@ -1,6 +1,7 @@
 #ifndef INC_MYGAME_CHESS_MOVEMENT_IMOVECHECKER
 #define INC_MYGAME_CHESS_MOVEMENT_IMOVECHECKER
 
+#include <memory>
 #include <mygame/chess/table/File.hpp>
 #include <mygame/chess/table/Rank.hpp>
 #include <utility>
@@ -16,6 +17,7 @@ class IMoveChecker
 {
 public:
     virtual std::vector<Position> getAvailablePositions(const Position& actualPosition) const = 0;
+    virtual std::unique_ptr<IMoveChecker> clone() const = 0;
 
     virtual ~IMoveChecker() = default;
 };

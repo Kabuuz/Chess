@@ -13,8 +13,10 @@ class BishopMoveChecker : public IMoveChecker
 {
 public:
     BishopMoveChecker(table::Board& board);
+    BishopMoveChecker(const BishopMoveChecker& other);
 
     std::vector<Position> getAvailablePositions(const Position& actualPosition) const override;
+    std::unique_ptr<IMoveChecker> clone() const override;
 
 private:
     std::vector<Position> getTopRightPositions(const table::Rank& rank, const table::File& file) const;
