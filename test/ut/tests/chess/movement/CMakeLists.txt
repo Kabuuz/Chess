@@ -1,5 +1,5 @@
 target_sources(${BINARY}
-PUBLIC
+PRIVATE
 ${CMAKE_CURRENT_SOURCE_DIR}/BishopMoveCheckerTests.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/CombinedMoveCheckerTests.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/KnightMoveCheckerTests.cpp
