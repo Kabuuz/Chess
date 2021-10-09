@@ -4,6 +4,12 @@ namespace chess
 {
 namespace movement
 {
+
+std::unique_ptr<IMoveChecker> BishopMoveChecker::create(table::Board& board)
+{
+    return std::make_unique<BishopMoveChecker>(board);
+}
+
 BishopMoveChecker::BishopMoveChecker(table::Board& board)
     : board_(board)
 {

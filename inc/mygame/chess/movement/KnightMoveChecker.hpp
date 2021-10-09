@@ -12,6 +12,7 @@ namespace movement
 class KnightMoveChecker : public IMoveChecker
 {
 public:
+    static std::unique_ptr<IMoveChecker> create(table::Board &board);
     KnightMoveChecker(table::Board& board);
     KnightMoveChecker(const KnightMoveChecker& other);
 

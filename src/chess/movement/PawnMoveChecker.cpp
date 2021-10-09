@@ -4,6 +4,11 @@ namespace chess
 {
 namespace movement
 {
+std::unique_ptr<IMoveChecker> PawnMoveChecker::create(table::Board& board, figure::FigureColor color)
+{
+    return std::make_unique<PawnMoveChecker>(board, color);
+}
+
 PawnMoveChecker::PawnMoveChecker(table::Board& board, figure::FigureColor color)
     : board_(board), color_(color)
 {

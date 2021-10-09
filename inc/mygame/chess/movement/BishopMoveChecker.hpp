@@ -12,6 +12,7 @@ namespace movement
 class BishopMoveChecker : public IMoveChecker
 {
 public:
+    static std::unique_ptr<IMoveChecker> create(table::Board& board);
     BishopMoveChecker(table::Board& board);
     BishopMoveChecker(const BishopMoveChecker& other);
 
