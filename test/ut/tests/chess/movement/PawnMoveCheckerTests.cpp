@@ -58,9 +58,9 @@ TEST_F(PawnMoveCheckerTests, WhiteShouldReturnOneSquare)
 
     prepareMainFigure(rank, file, color);
 
-    PawnMoveChecker sut(board_, color);
+    auto sut = PawnMoveChecker::create(board_, color);
 
-    auto availableMoves = sut.getAvailablePositions({rank, file});
+    auto availableMoves = sut->getAvailablePositions({rank, file});
 
     constexpr int expecteNumberOfMoves = 1;
     const table::Rank expectedRank = 5;
@@ -78,9 +78,9 @@ TEST_F(PawnMoveCheckerTests, BlackShouldReturnOneSquare)
 
     prepareMainFigure(rank, file, color);
 
-    PawnMoveChecker sut(board_, color);
+    auto sut = PawnMoveChecker::create(board_, color);
 
-    auto availableMoves = sut.getAvailablePositions({rank, file});
+    auto availableMoves = sut->getAvailablePositions({rank, file});
 
     constexpr int expecteNumberOfMoves = 1;
     const table::Rank expectedRank = 3;
@@ -116,9 +116,9 @@ TEST_P(PawnMoveCheckerTestsParametrized, ShouldNotFindAnyMovesWhenSurrounded)
     prepareBoard();
     prepareMainFigure(mainFigureRank, mainFigureFile, mainFigureColor);
 
-    PawnMoveChecker sut(board_, mainFigureColor);
+    auto sut = PawnMoveChecker::create(board_, mainFigureColor);
 
-    auto availableMoves = sut.getAvailablePositions({mainFigureRank, mainFigureFile});
+    auto availableMoves = sut->getAvailablePositions({mainFigureRank, mainFigureFile});
 
     EXPECT_EQ(availableMoves.size(), 0);
 }

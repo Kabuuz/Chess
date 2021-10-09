@@ -75,9 +75,9 @@ TEST_P(BishopMoveCheckerTestsParametrized, ShouldFindAvailableMoves)
     prepareBoard();
     prepareMainFigure(mainFigureRank, mainFigureFile, mainFigureColor);
 
-    BishopMoveChecker sut(board_);
+    auto sut = BishopMoveChecker::create(board_);
 
-    auto availableMoves = sut.getAvailablePositions({mainFigureRank, mainFigureFile});
+    auto availableMoves = sut->getAvailablePositions({mainFigureRank, mainFigureFile});
 
     std::vector<Position> expectedPositions({{5, 'c'}, {3, 'c'}, {3, 'e'}, {2, 'f'}, {1, 'g'}});
     std::sort(availableMoves.begin(), availableMoves.end());

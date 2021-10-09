@@ -75,9 +75,9 @@ TEST_P(RookMoveCheckerTestsParametrized, ShouldFindAvailableMoves)
     prepareBoard();
     prepareMainFigure(mainFigureRank, mainFigureFile, mainFigureColor);
 
-    RookMoveChecker sut(board_);
+    auto sut = RookMoveChecker::create(board_);
 
-    auto availableMoves = sut.getAvailablePositions({mainFigureRank, mainFigureFile});
+    auto availableMoves = sut->getAvailablePositions({mainFigureRank, mainFigureFile});
 
     std::vector<Position> expectedPositions({{5, 'd'}, {4, 'b'}, {4, 'c'}, {3, 'd'}, {2, 'd'}, {1, 'd'}});
     std::sort(availableMoves.begin(), availableMoves.end());

@@ -75,9 +75,9 @@ TEST_P(KnightMoveCheckerTestsParametrized, ShouldFindAvailableMoves)
     prepareBoard();
     prepareMainFigure(mainFigureRank, mainFigureFile, mainFigureColor);
 
-    KnightMoveChecker sut(board_);
+    auto sut = KnightMoveChecker::create(board_);
 
-    auto availableMoves = sut.getAvailablePositions({mainFigureRank, mainFigureFile});
+    auto availableMoves = sut->getAvailablePositions({mainFigureRank, mainFigureFile});
 
     std::vector<Position> expectedPositions({{6, 'e'}, {5, 'f'}, {3, 'f'}, {2, 'e'}, {3, 'b'}, {5, 'b'}});
     std::sort(availableMoves.begin(), availableMoves.end());
