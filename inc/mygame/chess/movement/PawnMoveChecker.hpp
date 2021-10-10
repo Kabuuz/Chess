@@ -9,10 +9,10 @@ namespace chess {
 namespace movement {
 class PawnMoveChecker : public IMoveChecker {
 public:
-    static std::unique_ptr<IMoveChecker> create(table::Board &board, figure::FigureColor color);
+    static IMoveCheckerPtr create(table::Board &board, figure::FigureColor color);
 
     std::vector<Position> getAvailablePositions(const Position &actualPosition) const override;
-    std::unique_ptr<IMoveChecker> clone() const override;
+    IMoveCheckerPtr clone() const override;
 
 private:
     PawnMoveChecker(table::Board &board, figure::FigureColor color);

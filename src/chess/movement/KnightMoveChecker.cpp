@@ -4,7 +4,7 @@ namespace chess
 {
 namespace movement
 {
-std::unique_ptr<IMoveChecker> KnightMoveChecker::create(table::Board& board)
+IMoveCheckerPtr KnightMoveChecker::create(table::Board& board)
 {
     return std::unique_ptr<KnightMoveChecker>(new KnightMoveChecker(board));
 }
@@ -51,7 +51,7 @@ std::vector<Position> KnightMoveChecker::getAvailablePositions(const Position& a
     return availablePositions;
 }
 
-std::unique_ptr<IMoveChecker> KnightMoveChecker::clone() const
+IMoveCheckerPtr KnightMoveChecker::clone() const
 {
     return std::unique_ptr<IMoveChecker>(new KnightMoveChecker(*this));
 }

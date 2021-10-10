@@ -15,11 +15,11 @@ public:
     CombinedMoveChecker(const CombinedMoveChecker& other);
 
     std::vector<Position> getAvailablePositions(const Position& actualPosition) const override;
-    void addChecker(std::unique_ptr<IMoveChecker> checker);
-    std::unique_ptr<IMoveChecker> clone() const override;
+    void addChecker(IMoveCheckerPtr checker);
+    IMoveCheckerPtr clone() const override;
 
 private:
-    std::vector<std::unique_ptr<IMoveChecker>> checkers_;
+    std::vector<IMoveCheckerPtr> checkers_;
 };
 }  // namespace movement
 }  // namespace chess

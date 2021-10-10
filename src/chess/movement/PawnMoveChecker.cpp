@@ -4,7 +4,7 @@ namespace chess
 {
 namespace movement
 {
-std::unique_ptr<IMoveChecker> PawnMoveChecker::create(table::Board& board, figure::FigureColor color)
+IMoveCheckerPtr PawnMoveChecker::create(table::Board& board, figure::FigureColor color)
 {
     return std::unique_ptr<PawnMoveChecker>(new PawnMoveChecker(board, color));
 }
@@ -72,7 +72,7 @@ std::vector<Position> PawnMoveChecker::getPositionsForBlackPawn(const Position& 
     return availablePositions;
 }
 
-std::unique_ptr<IMoveChecker> PawnMoveChecker::clone() const
+IMoveCheckerPtr PawnMoveChecker::clone() const
 {
     return std::unique_ptr<IMoveChecker>(new PawnMoveChecker(*this));
 }

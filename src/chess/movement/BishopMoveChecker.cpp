@@ -5,7 +5,7 @@ namespace chess
 namespace movement
 {
 
-std::unique_ptr<IMoveChecker> BishopMoveChecker::create(table::Board& board)
+IMoveCheckerPtr BishopMoveChecker::create(table::Board& board)
 {
     return std::unique_ptr<BishopMoveChecker>(new BishopMoveChecker(board));
 }
@@ -142,7 +142,7 @@ std::vector<Position> BishopMoveChecker::getBottomLeftPositions(const table::Ran
     return availablePositions;
 }
 
-std::unique_ptr<IMoveChecker> BishopMoveChecker::clone() const
+IMoveCheckerPtr BishopMoveChecker::clone() const
 {
     return std::unique_ptr<IMoveChecker>(new BishopMoveChecker(*this));
 }

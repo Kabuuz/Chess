@@ -6,13 +6,13 @@ namespace movement
 {
 CombinedMoveCheckerBuilder::CombinedMoveCheckerBuilder() = default;
 
-CombinedMoveCheckerBuilder& CombinedMoveCheckerBuilder::add(std::unique_ptr<IMoveChecker> checker)
+CombinedMoveCheckerBuilder& CombinedMoveCheckerBuilder::add(IMoveCheckerPtr checker)
 {
     combinedChecker_.addChecker(std::move(checker));
     return *this;
 }
 
-std::unique_ptr<IMoveChecker> CombinedMoveCheckerBuilder::build()
+IMoveCheckerPtr CombinedMoveCheckerBuilder::build()
 {
     return std::unique_ptr<IMoveChecker>(new CombinedMoveChecker(combinedChecker_));
 }

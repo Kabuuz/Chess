@@ -12,8 +12,8 @@ class CombinedMoveCheckerBuilder
 public:
     CombinedMoveCheckerBuilder();
 
-    CombinedMoveCheckerBuilder& add(std::unique_ptr<IMoveChecker> checker);
-    std::unique_ptr<IMoveChecker> build();
+    CombinedMoveCheckerBuilder& add(IMoveCheckerPtr checker);
+    IMoveCheckerPtr build();
 
 private:
     CombinedMoveChecker combinedChecker_;

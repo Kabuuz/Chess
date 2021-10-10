@@ -32,12 +32,12 @@ std::vector<Position> CombinedMoveChecker::getAvailablePositions(const Position&
     return std::vector<Position>(uniqueAvailablePositions.begin(), uniqueAvailablePositions.end());
 }
 
-void CombinedMoveChecker::addChecker(std::unique_ptr<IMoveChecker> checker)
+void CombinedMoveChecker::addChecker(IMoveCheckerPtr checker)
 {
     checkers_.push_back(std::move(checker));
 }
 
-std::unique_ptr<IMoveChecker> CombinedMoveChecker::clone() const
+IMoveCheckerPtr CombinedMoveChecker::clone() const
 {
     return std::unique_ptr<IMoveChecker>(new CombinedMoveChecker(*this));
 }

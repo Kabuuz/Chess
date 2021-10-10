@@ -7,6 +7,7 @@ target_sources(${LIB_NAME}
     ${INCLUDE_DIR}/mygame/chess/movement/BishopMoveChecker.hpp
     ${INCLUDE_DIR}/mygame/chess/movement/CombinedMoveChecker.hpp
     ${INCLUDE_DIR}/mygame/chess/movement/CombinedMoveCheckerBuilder.hpp
+    ${INCLUDE_DIR}/mygame/chess/movement/fwd.hpp
     ${INCLUDE_DIR}/mygame/chess/movement/IMoveChecker.hpp
     ${INCLUDE_DIR}/mygame/chess/movement/KnightMoveChecker.hpp
     ${INCLUDE_DIR}/mygame/chess/movement/PawnMoveChecker.hpp

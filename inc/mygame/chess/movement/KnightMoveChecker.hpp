@@ -12,10 +12,10 @@ namespace movement
 class KnightMoveChecker : public IMoveChecker
 {
 public:
-    static std::unique_ptr<IMoveChecker> create(table::Board &board);
+    static IMoveCheckerPtr create(table::Board &board);
 
     std::vector<Position> getAvailablePositions(const Position& actualPosition) const override;
-    std::unique_ptr<IMoveChecker> clone() const override;
+    IMoveCheckerPtr clone() const override;
 
 private:
     KnightMoveChecker(table::Board& board);
