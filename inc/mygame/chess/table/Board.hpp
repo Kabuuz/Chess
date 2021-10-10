@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_TABLE_BOARD
-#define INC_MYGAME_CHESS_TABLE_BOARD
+#ifndef MYGAME_CHESS_TABLE_BOARD_HPP
+#define MYGAME_CHESS_TABLE_BOARD_HPP
 
 #include <array>
 #include <mygame/chess/figure/FigureBase.hpp>
@@ -29,4 +29,4 @@ private:
 }  // namespace table
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_TABLE_BOARD
+#endif  // MYGAME_CHESS_TABLE_BOARD_HPP

@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_APPLICATION_APPLICATION
-#define INC_MYGAME_APPLICATION_APPLICATION
+#ifndef MYGAME_APPLICATION_APPLICATION_HPP
+#define MYGAME_APPLICATION_APPLICATION_HPP
 
 #include <mygame/application/IApplication.hpp>
 
@@ -25,4 +25,4 @@ private:
 
 }  // namespace application
 
-#endif  // INC_MYGAME_APPLICATION_APPLICATION
+#endif  // MYGAME_APPLICATION_APPLICATION_HPP

@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_MOVEMENT_BISHOPMOVECHECKER
-#define INC_MYGAME_CHESS_MOVEMENT_BISHOPMOVECHECKER
+#ifndef MYGAME_CHESS_MOVEMENT_BISHOPMOVECHECKER_HPP
+#define MYGAME_CHESS_MOVEMENT_BISHOPMOVECHECKER_HPP
 
 #include <mygame/chess/movement/IMoveChecker.hpp>
 #include <mygame/chess/table/Board.hpp>
@@ -30,4 +30,4 @@ private:
 }  // namespace movement
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_MOVEMENT_BISHOPMOVECHECKER
+#endif  // MYGAME_CHESS_MOVEMENT_BISHOPMOVECHECKER_HPP

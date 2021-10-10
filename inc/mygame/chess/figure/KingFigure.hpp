@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_FIGURE_KINGFIGURE
-#define INC_MYGAME_CHESS_FIGURE_KINGFIGURE
+#ifndef MYGAME_CHESS_FIGURE_KINGFIGURE_HPP
+#define MYGAME_CHESS_FIGURE_KINGFIGURE_HPP
 
 #include <mygame/chess/figure/FigureBase.hpp>
 
@@ -16,4 +16,4 @@ public:
 }  // namespace figure
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_FIGURE_KINGFIGURE
+#endif  // MYGAME_CHESS_FIGURE_KINGFIGURE_HPP

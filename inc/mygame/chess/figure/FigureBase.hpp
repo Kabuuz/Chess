@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_FIGURE_FIGUREBASE
-#define INC_MYGAME_CHESS_FIGURE_FIGUREBASE
+#ifndef MYGAME_CHESS_FIGURE_FIGUREBASE_HPP
+#define MYGAME_CHESS_FIGURE_FIGUREBASE_HPP
 
 namespace chess
 {
@@ -39,4 +39,4 @@ private:
 }  // namespace figure
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_FIGURE_FIGUREBASE
+#endif  // MYGAME_CHESS_FIGURE_FIGUREBASE_HPP

@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_TABLE_RANK
-#define INC_MYGAME_CHESS_TABLE_RANK
+#ifndef MYGAME_CHESS_TABLE_RANK_HPP
+#define MYGAME_CHESS_TABLE_RANK_HPP
 
 #include <cstdio>
 
@@ -36,4 +36,4 @@ private:
 }  // namespace table
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_TABLE_RANK
+#endif  // MYGAME_CHESS_TABLE_RANK_HPP

@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_MOVEMENT_IMOVECHECKER
-#define INC_MYGAME_CHESS_MOVEMENT_IMOVECHECKER
+#ifndef MYGAME_CHESS_MOVEMENT_IMOVECHECKER_HPP
+#define MYGAME_CHESS_MOVEMENT_IMOVECHECKER_HPP
 
 #include <memory>
 #include <mygame/chess/movement/fwd.hpp>
@@ -25,4 +25,4 @@ public:
 }  // namespace movement
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_MOVEMENT_IMOVECHECKER
+#endif  // MYGAME_CHESS_MOVEMENT_IMOVECHECKER_HPP

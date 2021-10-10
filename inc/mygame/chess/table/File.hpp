@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_TABLE_FILE
-#define INC_MYGAME_CHESS_TABLE_FILE
+#ifndef MYGAME_CHESS_TABLE_FILE_HPP
+#define MYGAME_CHESS_TABLE_FILE_HPP
 
 #include <cstdio>
 
@@ -41,4 +41,4 @@ private:
 }  // namespace table
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_TABLE_FILE
+#endif  // MYGAME_CHESS_TABLE_FILE_HPP

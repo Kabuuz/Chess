@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_TABLE_TABLE
-#define INC_MYGAME_CHESS_TABLE_TABLE
+#ifndef MYGAME_CHESS_TABLE_TABLE_HPP
+#define MYGAME_CHESS_TABLE_TABLE_HPP
 
 #include <map>
 #include <memory>
@@ -28,4 +28,4 @@ private:
 }  // namespace table
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_TABLE_TABLE
+#endif  // MYGAME_CHESS_TABLE_TABLE_HPP

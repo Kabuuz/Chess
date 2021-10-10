@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_MOVEMENT_ROOKMOVECHECKER
-#define INC_MYGAME_CHESS_MOVEMENT_ROOKMOVECHECKER
+#ifndef MYGAME_CHESS_MOVEMENT_ROOKMOVECHECKER_HPP
+#define MYGAME_CHESS_MOVEMENT_ROOKMOVECHECKER_HPP
 
 #include <mygame/chess/movement/IMoveChecker.hpp>
 #include <mygame/chess/table/Board.hpp>
@@ -26,4 +26,4 @@ private:
 }  // namespace movement
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_MOVEMENT_ROOKMOVECHECKER
+#endif  // MYGAME_CHESS_MOVEMENT_ROOKMOVECHECKER_HPP

@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_MOVEMENT_PAWNMOVECHECKER
-#define INC_MYGAME_CHESS_MOVEMENT_PAWNMOVECHECKER
+#ifndef MYGAME_CHESS_MOVEMENT_PAWNMOVECHECKER_HPP
+#define MYGAME_CHESS_MOVEMENT_PAWNMOVECHECKER_HPP
 
 #include <mygame/chess/figure/FigureBase.hpp>
 #include <mygame/chess/movement/IMoveChecker.hpp>
@@ -27,4 +27,4 @@ private:
 }  // namespace movement
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_MOVEMENT_PAWNMOVECHECKER
+#endif  // MYGAME_CHESS_MOVEMENT_PAWNMOVECHECKER_HPP

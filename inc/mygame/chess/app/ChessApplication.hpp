@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_APP_CHESSAPPLICATION
-#define INC_MYGAME_CHESS_APP_CHESSAPPLICATION
+#ifndef MYGAME_CHESS_APP_CHESSAPPLICATION_HPP
+#define MYGAME_CHESS_APP_CHESSAPPLICATION_HPP
 
 #include <mygame/application/Application.hpp>
 
@@ -17,4 +17,4 @@ public:
 }  // namespace app
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_APP_CHESSAPPLICATION
+#endif  // MYGAME_CHESS_APP_CHESSAPPLICATION_HPP

@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_APPLICATION_FWD
-#define INC_MYGAME_APPLICATION_FWD
+#ifndef MYGAME_APPLICATION_FWD_HPP
+#define MYGAME_APPLICATION_FWD_HPP
 
 #include <memory>
 
@@ -10,4 +10,4 @@ using IApplicationPtr = std::unique_ptr<IApplication>;
 
 }  // namespace application
 
-#endif  // INC_MYGAME_APPLICATION_FWD
+#endif  // MYGAME_APPLICATION_FWD_HPP

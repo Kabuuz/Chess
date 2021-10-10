@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_FIGURE_KNIGHTFIGURE
-#define INC_MYGAME_CHESS_FIGURE_KNIGHTFIGURE
+#ifndef MYGAME_CHESS_FIGURE_KNIGHTFIGURE_HPP
+#define MYGAME_CHESS_FIGURE_KNIGHTFIGURE_HPP
 
 #include <mygame/chess/figure/FigureBase.hpp>
 
@@ -16,4 +16,4 @@ public:
 }  // namespace figure
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_FIGURE_KNIGHTFIGURE
+#endif  // MYGAME_CHESS_FIGURE_KNIGHTFIGURE_HPP

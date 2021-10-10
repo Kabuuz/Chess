@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_FIGURE_ROOKFIGURE
-#define INC_MYGAME_CHESS_FIGURE_ROOKFIGURE
+#ifndef MYGAME_CHESS_FIGURE_ROOKFIGURE_HPP
+#define MYGAME_CHESS_FIGURE_ROOKFIGURE_HPP
 
 #include <mygame/chess/figure/FigureBase.hpp>
 
@@ -16,4 +16,4 @@ public:
 }  // namespace figure
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_FIGURE_ROOKFIGURE
+#endif  // MYGAME_CHESS_FIGURE_ROOKFIGURE_HPP
