@@ -1,5 +1,5 @@
-#ifndef INC_MYGAME_CHESS_MOVEMENT_KNIGHTMOVECHECKER
-#define INC_MYGAME_CHESS_MOVEMENT_KNIGHTMOVECHECKER
+#ifndef MYGAME_CHESS_MOVEMENT_KINGMOVECHECKER_HPP
+#define MYGAME_CHESS_MOVEMENT_KINGMOVECHECKER_HPP
 
 #include <mygame/chess/movement/IMoveChecker.hpp>
 #include <mygame/chess/table/Board.hpp>
@@ -8,21 +8,21 @@ namespace chess
 {
 namespace movement
 {
-class KnightMoveChecker : public IMoveChecker
+class KingMoveChecker : public IMoveChecker
 {
 public:
-    static IMoveCheckerPtr create(table::Board &board);
+    static IMoveCheckerPtr create(table::Board& board);
 
     std::vector<Position> getAvailablePositions(const Position& actualPosition) const override;
     IMoveCheckerPtr clone() const override;
 
 private:
-    KnightMoveChecker(table::Board& board);
-    KnightMoveChecker(const KnightMoveChecker& other);
+    KingMoveChecker(table::Board& board);
+    KingMoveChecker(const KingMoveChecker& other);
 
     table::Board& board_;
 };
 }  // namespace movement
 }  // namespace chess
 
-#endif  // INC_MYGAME_CHESS_MOVEMENT_KNIGHTMOVECHECKER
+#endif //MYGAME_CHESS_MOVEMENT_KINGMOVECHECKER_HPP

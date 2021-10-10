@@ -9,6 +9,7 @@ target_sources(${LIB_NAME}
     ${INCLUDE_DIR}/mygame/chess/movement/CombinedMoveCheckerBuilder.hpp
     ${INCLUDE_DIR}/mygame/chess/movement/fwd.hpp
     ${INCLUDE_DIR}/mygame/chess/movement/IMoveChecker.hpp
+    ${INCLUDE_DIR}/mygame/chess/movement/KingMoveChecker.hpp
     ${INCLUDE_DIR}/mygame/chess/movement/KnightMoveChecker.hpp
     ${INCLUDE_DIR}/mygame/chess/movement/PawnMoveChecker.hpp
     ${INCLUDE_DIR}/mygame/chess/movement/RookMoveChecker.hpp
@@ -17,6 +18,7 @@ target_sources(${LIB_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/BishopMoveChecker.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/CombinedMoveChecker.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/CombinedMoveCheckerBuilder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/KingMoveChecker.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/KnightMoveChecker.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/PawnMoveChecker.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/RookMoveChecker.cpp

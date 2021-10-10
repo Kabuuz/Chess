@@ -15,7 +15,7 @@ target_link_libraries(mainlib PUBLIC
 
 set(SOURCE_FILES
     ./main.cpp
-        ../inc/mygame/chess/movement/fwd.hpp)
+)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 

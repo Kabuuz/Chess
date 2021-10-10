@@ -1,7 +1,6 @@
 #ifndef INC_MYGAME_CHESS_MOVEMENT_BISHOPMOVECHECKER
 #define INC_MYGAME_CHESS_MOVEMENT_BISHOPMOVECHECKER
 
-#include <mygame/chess/figure/FigureBase.hpp>
 #include <mygame/chess/movement/IMoveChecker.hpp>
 #include <mygame/chess/table/Board.hpp>
 
