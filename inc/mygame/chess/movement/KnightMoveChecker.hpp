@@ -13,13 +13,14 @@ class KnightMoveChecker : public IMoveChecker
 {
 public:
     static std::unique_ptr<IMoveChecker> create(table::Board &board);
-    KnightMoveChecker(table::Board& board);
-    KnightMoveChecker(const KnightMoveChecker& other);
 
     std::vector<Position> getAvailablePositions(const Position& actualPosition) const override;
     std::unique_ptr<IMoveChecker> clone() const override;
 
 private:
+    KnightMoveChecker(table::Board& board);
+    KnightMoveChecker(const KnightMoveChecker& other);
+
     table::Board& board_;
 };
 }  // namespace movement

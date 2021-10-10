@@ -12,17 +12,14 @@ class RookMoveChecker : public IMoveChecker {
 public:
     static std::unique_ptr<IMoveChecker> create(table::Board &board);
 
-    RookMoveChecker(table::Board &board);
-
-    RookMoveChecker(const RookMoveChecker &other);
-
     std::vector<Position> getAvailablePositions(const Position &actualPosition) const override;
-
     std::unique_ptr<IMoveChecker> clone() const override;
 
 private:
-    std::vector<Position> getPositionsInFile(const table::Rank &rank, const table::File &file) const;
+    RookMoveChecker(table::Board &board);
+    RookMoveChecker(const RookMoveChecker &other);
 
+    std::vector<Position> getPositionsInFile(const table::Rank &rank, const table::File &file) const;
     std::vector<Position> getPositionsInRank(const table::Rank &rank, const table::File &file) const;
 
     table::Board &board_;

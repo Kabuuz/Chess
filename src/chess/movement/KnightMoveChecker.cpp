@@ -6,7 +6,7 @@ namespace movement
 {
 std::unique_ptr<IMoveChecker> KnightMoveChecker::create(table::Board& board)
 {
-    return std::make_unique<KnightMoveChecker>(board);
+    return std::unique_ptr<KnightMoveChecker>(new KnightMoveChecker(board));
 }
 
 KnightMoveChecker::KnightMoveChecker(table::Board& board)

@@ -6,7 +6,7 @@ namespace movement
 {
 std::unique_ptr<IMoveChecker> PawnMoveChecker::create(table::Board& board, figure::FigureColor color)
 {
-    return std::make_unique<PawnMoveChecker>(board, color);
+    return std::unique_ptr<PawnMoveChecker>(new PawnMoveChecker(board, color));
 }
 
 PawnMoveChecker::PawnMoveChecker(table::Board& board, figure::FigureColor color)

@@ -7,7 +7,7 @@ namespace movement
 
 std::unique_ptr<IMoveChecker> BishopMoveChecker::create(table::Board& board)
 {
-    return std::make_unique<BishopMoveChecker>(board);
+    return std::unique_ptr<BishopMoveChecker>(new BishopMoveChecker(board));
 }
 
 BishopMoveChecker::BishopMoveChecker(table::Board& board)

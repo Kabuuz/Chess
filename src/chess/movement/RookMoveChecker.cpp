@@ -6,7 +6,7 @@ namespace movement
 {
 std::unique_ptr<IMoveChecker> RookMoveChecker::create(table::Board& board)
 {
-    return std::make_unique<RookMoveChecker>(board);
+    return std::unique_ptr<RookMoveChecker>(new RookMoveChecker(board));
 }
 
 RookMoveChecker::RookMoveChecker(table::Board& board)

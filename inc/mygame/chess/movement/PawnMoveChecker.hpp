@@ -11,17 +11,14 @@ class PawnMoveChecker : public IMoveChecker {
 public:
     static std::unique_ptr<IMoveChecker> create(table::Board &board, figure::FigureColor color);
 
-    PawnMoveChecker(table::Board &board, figure::FigureColor color);
-
-    PawnMoveChecker(const PawnMoveChecker &other);
-
     std::vector<Position> getAvailablePositions(const Position &actualPosition) const override;
-
     std::unique_ptr<IMoveChecker> clone() const override;
 
 private:
-    std::vector<Position> getPositionsForWhitePawn(const Position &actualPosition) const;
+    PawnMoveChecker(table::Board &board, figure::FigureColor color);
+    PawnMoveChecker(const PawnMoveChecker &other);
 
+    std::vector<Position> getPositionsForWhitePawn(const Position &actualPosition) const;
     std::vector<Position> getPositionsForBlackPawn(const Position &actualPosition) const;
 
     table::Board &board_;
