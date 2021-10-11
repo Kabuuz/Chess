@@ -52,7 +52,7 @@ std::vector<Position> RookMoveChecker::getPositionsInFile(const table::Rank& ran
             continue;
         }
 
-        if (board_.getFigure(currentRank, file) == nullptr)
+        if (board_.isFigurePresent(currentRank, file))
         {
             availablePositions.push_back({currentRank, file});
         }
@@ -70,7 +70,7 @@ std::vector<Position> RookMoveChecker::getPositionsInFile(const table::Rank& ran
             continue;
         }
 
-        if (board_.getFigure(currentRank, file) == nullptr)
+        if (board_.isFigurePresent(currentRank, file))
         {
             availablePositions.push_back({currentRank, file});
         }
@@ -99,7 +99,7 @@ std::vector<Position> RookMoveChecker::getPositionsInRank(const table::Rank& ran
             continue;
         }
 
-        if (board_.getFigure(rank, currentfile) == nullptr)
+        if (board_.isFigurePresent(rank, currentfile))
         {
             availablePositions.push_back({rank, currentfile});
         }
@@ -117,7 +117,7 @@ std::vector<Position> RookMoveChecker::getPositionsInRank(const table::Rank& ran
             continue;
         }
 
-        if (board_.getFigure(rank, currentfile) == nullptr)
+        if (board_.isFigurePresent(rank, currentfile))
         {
             availablePositions.push_back({rank, currentfile});
         }

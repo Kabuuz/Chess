@@ -44,7 +44,7 @@ std::vector<Position> PawnMoveChecker::getPositionsForWhitePawn(const Position& 
 
     table::Rank nextRank = static_cast<int>(rank) + 1;
 
-    if (board_.getFigure(nextRank, file) == nullptr)
+    if (board_.isFigurePresent(nextRank, file))
     {
         availablePositions.push_back({nextRank, file});
     }
@@ -64,7 +64,7 @@ std::vector<Position> PawnMoveChecker::getPositionsForBlackPawn(const Position& 
 
     table::Rank nextRank = static_cast<int>(rank) - 1;
 
-    if (board_.getFigure(nextRank, file) == nullptr)
+    if (board_.isFigurePresent(nextRank, file))
     {
         availablePositions.push_back({nextRank, file});
     }

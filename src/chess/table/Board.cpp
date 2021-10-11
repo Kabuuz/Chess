@@ -19,5 +19,10 @@ void Board::setFigure(figure::FigureBase* figure, const Rank& rank, const File& 
     figures_.at(rank).at(file) = figure;
 }
 
+bool Board::isFigurePresent(const Rank& rank, const File& file)
+{
+    return figures_.at(rank).at(file) == nullptr;
+}
+
 }  // namespace table
 }  // namespace chess

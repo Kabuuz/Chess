@@ -22,6 +22,7 @@ public:
 
     figure::FigureBase* getFigure(const Rank& rank, const File& file);  //rank - rzad, file - kolumna
     void setFigure(figure::FigureBase* figure, const Rank& rank, const File& file);
+    bool isFigurePresent(const Rank& rank, const File& file);
 
 private:
     std::array<std::array<figure::FigureBase*, BOARD_HEIGHT>, BOARD_WIDTH> figures_;

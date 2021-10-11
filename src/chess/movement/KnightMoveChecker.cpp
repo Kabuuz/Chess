@@ -41,7 +41,7 @@ std::vector<Position> KnightMoveChecker::getAvailablePositions(const Position& a
 
         if (rankToCheck >= table::MINIMAL_RANK && rankToCheck < (table::MINIMAL_RANK + table::BOARD_HEIGHT) && fileToCheck >= table::MINIMAL_FILE && fileToCheck < (table::MINIMAL_FILE + table::BOARD_WIDTH))
         {
-            if (board_.getFigure(rankToCheck, fileToCheck) == nullptr)
+            if (board_.isFigurePresent(rankToCheck, fileToCheck))
             {
                 availablePositions.push_back({rankToCheck, fileToCheck});
             }

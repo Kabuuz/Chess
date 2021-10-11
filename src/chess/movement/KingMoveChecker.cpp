@@ -37,7 +37,7 @@ std::vector<Position> KingMoveChecker::getAvailablePositions(const Position& act
             if(currentRank>= table::MINIMAL_RANK && currentRank<table::MINIMAL_RANK+table::BOARD_HEIGHT
                 && currentFile>=table::MINIMAL_FILE && currentFile<table::MINIMAL_FILE+table::BOARD_WIDTH)
             {
-                if (board_.getFigure(currentRank, currentFile) == nullptr)
+                if (board_.isFigurePresent(currentRank, currentFile))
                 {
                     availablePositions.emplace_back(currentRank, currentFile);
                 }

@@ -51,7 +51,7 @@ std::vector<Position> BishopMoveChecker::getTopRightPositions(const table::Rank&
 
     while (rankToCheck < (table::MINIMAL_RANK + table::BOARD_HEIGHT) && fileToCheck < (table::MINIMAL_FILE + table::BOARD_WIDTH))
     {
-        if (board_.getFigure(rankToCheck, fileToCheck) == nullptr)
+        if (board_.isFigurePresent(rankToCheck, fileToCheck))
         {
             availablePositions.push_back({rankToCheck, fileToCheck});
         }
@@ -76,7 +76,7 @@ std::vector<Position> BishopMoveChecker::getTopLeftPositions(const table::Rank& 
 
     while (rankToCheck < (table::MINIMAL_RANK + table::BOARD_HEIGHT) && fileToCheck >= table::MINIMAL_FILE)
     {
-        if (board_.getFigure(rankToCheck, fileToCheck) == nullptr)
+        if (board_.isFigurePresent(rankToCheck, fileToCheck))
         {
             availablePositions.push_back({rankToCheck, fileToCheck});
         }
@@ -101,7 +101,7 @@ std::vector<Position> BishopMoveChecker::getBottomRightPositions(const table::Ra
 
     while (rankToCheck >= table::MINIMAL_RANK && fileToCheck < (table::MINIMAL_FILE + table::BOARD_WIDTH))
     {
-        if (board_.getFigure(rankToCheck, fileToCheck) == nullptr)
+        if (board_.isFigurePresent(rankToCheck, fileToCheck))
         {
             availablePositions.push_back({rankToCheck, fileToCheck});
         }
@@ -126,7 +126,7 @@ std::vector<Position> BishopMoveChecker::getBottomLeftPositions(const table::Ran
 
     while (rankToCheck >= table::MINIMAL_RANK && fileToCheck >= table::MINIMAL_FILE)
     {
-        if (board_.getFigure(rankToCheck, fileToCheck) == nullptr)
+        if (board_.isFigurePresent(rankToCheck, fileToCheck))
         {
             availablePositions.push_back({rankToCheck, fileToCheck});
         }
