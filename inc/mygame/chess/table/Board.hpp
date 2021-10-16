@@ -13,7 +13,7 @@ namespace table
 constexpr int BOARD_WIDTH = 8;
 constexpr int BOARD_HEIGHT = 8;
 const Rank MINIMAL_RANK = 1;
-const File MINIMAL_FILE = 'A';
+const File MINIMAL_FILE = File('A');
 
 //TODO move all "using Position" to fwd.hpp in table folder
 using Position = std::pair<table::Rank, table::File>;

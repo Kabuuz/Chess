@@ -18,7 +18,7 @@ TEST_F(FileTests, ShouldReturnMinusOneOnWrongChar)
 {
     const int ERROR = -1;
     const char VALUE = '.';
-    File sut = VALUE;
+    File sut(VALUE);
 
     EXPECT_EQ(sut, ERROR);
 }
@@ -26,7 +26,7 @@ TEST_F(FileTests, ShouldReturnMinusOneOnWrongChar)
 TEST_F(FileTests, ShouldPreIncrement)
 {
     const int VALUE = 1;
-    File sut = VALUE;
+    File sut(VALUE);
 
     EXPECT_EQ(++sut, VALUE + 1);
 }
@@ -34,7 +34,7 @@ TEST_F(FileTests, ShouldPreIncrement)
 TEST_F(FileTests, ShouldPostIncrement)
 {
     const int VALUE = 1;
-    File sut = VALUE;
+    File sut(VALUE);
 
     EXPECT_EQ(sut++, VALUE);
     EXPECT_EQ(sut, VALUE + 1);
@@ -43,7 +43,7 @@ TEST_F(FileTests, ShouldPostIncrement)
 TEST_F(FileTests, ShouldPreDecrement)
 {
     const int VALUE = 1;
-    File sut = VALUE;
+    File sut(VALUE);
 
     EXPECT_EQ(--sut, VALUE - 1);
 }
@@ -52,7 +52,7 @@ TEST_F(FileTests, ShouldPostDecrement)
 
 {
     const int VALUE = 1;
-    File sut = VALUE;
+    File sut(VALUE);
 
     EXPECT_EQ(sut--, VALUE);
     EXPECT_EQ(sut, VALUE - 1);
@@ -61,7 +61,7 @@ TEST_F(FileTests, ShouldPostDecrement)
 TEST_F(FileTests, ShouldCompareWithRank)
 {
     const int VALUE = 1;
-    File sut = VALUE;
+    File sut(VALUE);
 
     EXPECT_EQ(sut, File(VALUE));
 }
@@ -69,7 +69,7 @@ TEST_F(FileTests, ShouldCompareWithRank)
 TEST_F(FileTests, ShouldCompareGreaterEqualThanInt)
 {
     const int VALUE = 1;
-    File sut = VALUE + 1;
+    File sut(VALUE + 1);
 
     EXPECT_GE(sut, VALUE);
 }
@@ -77,7 +77,7 @@ TEST_F(FileTests, ShouldCompareGreaterEqualThanInt)
 TEST_F(FileTests, ShouldCompareLessThanInt)
 {
     const int VALUE = 1;
-    File sut = VALUE - 1;
+    File sut(VALUE - 1);
 
     EXPECT_LT(sut, VALUE);
 }
@@ -85,7 +85,7 @@ TEST_F(FileTests, ShouldCompareLessThanInt)
 TEST_F(FileTests, ShouldAddInt)
 {
     const int VALUE = 1;
-    File sut = VALUE;
+    File sut(VALUE);
     sut = sut + VALUE;
 
     EXPECT_EQ(sut, 2 * VALUE);
@@ -93,11 +93,11 @@ TEST_F(FileTests, ShouldAddInt)
 
 TEST_F(FileTests, ShouldSubtractInt)
 {
-    const int VALUE = 1;
-    File sut = VALUE;
-    sut = sut - VALUE;
+    const int VALUE = 2;
+    File sut(VALUE);
+    sut = sut - 1;
 
-    EXPECT_EQ(sut, 0);
+    EXPECT_EQ(sut, 1);
 }
 
 class FileTestsParametrized : public ::testing::TestWithParam<std::tuple<int, char, char>>
@@ -124,7 +124,7 @@ INSTANTIATE_TEST_CASE_P(
 TEST_P(FileTestsParametrized, ShouldSaveInteger)
 {
     const int VALUE = std::get<0>(GetParam());
-    File sut = VALUE;
+    File sut(VALUE);
 
     EXPECT_EQ(sut, VALUE);
 }
@@ -132,7 +132,7 @@ TEST_P(FileTestsParametrized, ShouldSaveInteger)
 TEST_P(FileTestsParametrized, ShouldSaveCharLowerCase)
 {
     const char VALUE = std::get<1>(GetParam());
-    File sut = VALUE;
+    File sut(VALUE);
 
     EXPECT_EQ(sut, VALUE);
 }
@@ -141,7 +141,7 @@ TEST_P(FileTestsParametrized, ShouldSaveCharUpperCaseAndReturnLowerCase)
 {
     const char VALUE_UPPERCASE = std::get<2>(GetParam());
     const char VALUE_LOWERCASE = std::get<1>(GetParam());
-    File sut = VALUE_UPPERCASE;
+    File sut(VALUE_UPPERCASE);
 
     EXPECT_EQ(sut, VALUE_LOWERCASE);
 }
@@ -150,7 +150,7 @@ TEST_P(FileTestsParametrized, ShouldConvertUpperCaseToInt)
 {
     const char VALUE_UPPERCASE = std::get<2>(GetParam());
     const int VALUE = std::get<0>(GetParam());
-    File sut = VALUE_UPPERCASE;
+    File sut(VALUE_UPPERCASE);
 
     EXPECT_EQ(sut, VALUE);
 }
@@ -159,7 +159,7 @@ TEST_P(FileTestsParametrized, ShouldConvertLowerCaseToInt)
 {
     const char VALUE_LOWERCASE = std::get<1>(GetParam());
     const int VALUE = std::get<0>(GetParam());
-    File sut = VALUE_LOWERCASE;
+    File sut(VALUE_LOWERCASE);
 
     EXPECT_EQ(sut, VALUE);
 }

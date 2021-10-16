@@ -2,6 +2,8 @@
 
 #include <mygame/chess/table/File.hpp>
 
+#include <iostream>
+
 namespace chess
 {
 namespace table
@@ -17,7 +19,6 @@ File::File(int file)
 }
 
 File::File(char file)
-
 {
     if (isalpha(file))
     {
@@ -27,6 +28,16 @@ File::File(char file)
     {
         file_ = -1;
     }
+}
+
+File::File(const File& other)
+: file_(other.file_)
+{}
+
+File& File::operator=(const File& other)
+{
+    file_ = other.file_;
+    return *this;
 }
 
 File::operator int() const

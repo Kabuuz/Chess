@@ -1,4 +1,5 @@
 #include <mygame/chess/movement/BishopMoveChecker.hpp>
+#include <iostream>
 
 namespace chess
 {
@@ -51,7 +52,7 @@ std::vector<Position> BishopMoveChecker::getTopRightPositions(const table::Rank&
 
     while (rankToCheck < (table::MINIMAL_RANK + table::BOARD_HEIGHT) && fileToCheck < (table::MINIMAL_FILE + table::BOARD_WIDTH))
     {
-        if (board_.isFigurePresent(rankToCheck, fileToCheck))
+        if (!board_.isFigurePresent(rankToCheck, fileToCheck))
         {
             availablePositions.push_back({rankToCheck, fileToCheck});
         }
@@ -76,7 +77,7 @@ std::vector<Position> BishopMoveChecker::getTopLeftPositions(const table::Rank& 
 
     while (rankToCheck < (table::MINIMAL_RANK + table::BOARD_HEIGHT) && fileToCheck >= table::MINIMAL_FILE)
     {
-        if (board_.isFigurePresent(rankToCheck, fileToCheck))
+        if (!board_.isFigurePresent(rankToCheck, fileToCheck))
         {
             availablePositions.push_back({rankToCheck, fileToCheck});
         }
@@ -92,6 +93,8 @@ std::vector<Position> BishopMoveChecker::getTopLeftPositions(const table::Rank& 
     return availablePositions;
 }
 
+
+
 std::vector<Position> BishopMoveChecker::getBottomRightPositions(const table::Rank& rank, const table::File& file) const
 {
     std::vector<Position> availablePositions;
@@ -99,9 +102,12 @@ std::vector<Position> BishopMoveChecker::getBottomRightPositions(const table::Ra
     table::Rank rankToCheck = rank - 1;
     table::File fileToCheck = file + 1;
 
+    table::File temp = table::MINIMAL_FILE + table::BOARD_WIDTH;
+    std::cout<<static_cast<char>(temp);
+
     while (rankToCheck >= table::MINIMAL_RANK && fileToCheck < (table::MINIMAL_FILE + table::BOARD_WIDTH))
     {
-        if (board_.isFigurePresent(rankToCheck, fileToCheck))
+        if (!board_.isFigurePresent(rankToCheck, fileToCheck))
         {
             availablePositions.push_back({rankToCheck, fileToCheck});
         }
@@ -126,7 +132,7 @@ std::vector<Position> BishopMoveChecker::getBottomLeftPositions(const table::Ran
 
     while (rankToCheck >= table::MINIMAL_RANK && fileToCheck >= table::MINIMAL_FILE)
     {
-        if (board_.isFigurePresent(rankToCheck, fileToCheck))
+        if (!board_.isFigurePresent(rankToCheck, fileToCheck))
         {
             availablePositions.push_back({rankToCheck, fileToCheck});
         }

@@ -61,7 +61,8 @@ TEST_P(KingMoveCheckerTestsParametrized, ShouldFindAvailableMoves)
 
     auto availableMoves = sut->getAvailablePositions({mainFigureRank, mainFigureFile});
 
-    std::vector<Position> expectedPositions({{5,'c'},{5,'d'},{5,'e'},{4,'c'},{4,'e'},{3,'c'},{3,'d'},{3,'e'}});
+    std::vector<Position> expectedPositions({{5,table::File('c')},{5,table::File('d')},{5,table::File('e')}
+    ,{4,table::File('c')},{4,table::File('e')},{3,table::File('c')},{3,table::File('d')},{3,table::File('e')}});
     std::sort(availableMoves.begin(), availableMoves.end());
     std::sort(expectedPositions.begin(), expectedPositions.end());
 

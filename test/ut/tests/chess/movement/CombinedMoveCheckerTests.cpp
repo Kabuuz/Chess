@@ -23,9 +23,11 @@ TEST_F(CombinedMoveCheckerTests, ShouldCombineResultsWithoutRepetitions)
     CombinedMoveChecker sut;
 
     auto firstChecker = std::make_unique<MoveCheckerStub>();
-    firstChecker->setAvailableMoves({{1, 'a'}, {2, 'b'}, {3, 'c'}, {4, 'd'}});
+    firstChecker->setAvailableMoves({{1, table::File('a')}, {2, table::File('b')}
+    , {3, table::File('c')}, {4, table::File('d')}});
     auto secondChecker = std::make_unique<MoveCheckerStub>();
-    secondChecker->setAvailableMoves({{1, 'a'}, {5, 'e'}, {6, 'f'}, {7, 'g'}, {8, 'h'}});
+    secondChecker->setAvailableMoves({{1, table::File('a')}, {5, table::File('e')}
+    , {6, table::File('f')}, {7, table::File('g')}, {8, table::File('h')}});
 
     sut.addChecker(std::move(firstChecker));
     sut.addChecker(std::move(secondChecker));
@@ -34,7 +36,9 @@ TEST_F(CombinedMoveCheckerTests, ShouldCombineResultsWithoutRepetitions)
 
     auto availablePositions = sut.getAvailablePositions(actualPosition);
 
-    std::vector<Position> expectedPositions({{1, 'a'}, {2, 'b'}, {3, 'c'}, {4, 'd'}, {5, 'e'}, {6, 'f'}, {7, 'g'}, {8, 'h'}});
+    std::vector<Position> expectedPositions({{1, table::File('a')}, {2, table::File('b')}
+    , {3, table::File('c')}, {4, table::File('d')}, {5, table::File('e')}, {6, table::File('f')}
+    , {7, table::File('g')}, {8, table::File('h')}});
     std::sort(availablePositions.begin(), availablePositions.end());
     std::sort(expectedPositions.begin(), expectedPositions.end());
 

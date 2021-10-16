@@ -32,7 +32,7 @@ protected:
 void RookMoveCheckerTests::prepareBoard()
 {
     std::vector<table::Rank> ranks = {6, 6, 4, 4};
-    std::vector<table::File> files = {'c', 'd', 'a', 'e'};
+    std::vector<table::File> files = {table::File('c'), table::File('d'), table::File('a'), table::File('e')};
 
     ASSERT_EQ(ranks.size(), files.size());
 
@@ -79,7 +79,8 @@ TEST_P(RookMoveCheckerTestsParametrized, ShouldFindAvailableMoves)
 
     auto availableMoves = sut->getAvailablePositions({mainFigureRank, mainFigureFile});
 
-    std::vector<Position> expectedPositions({{5, 'd'}, {4, 'b'}, {4, 'c'}, {3, 'd'}, {2, 'd'}, {1, 'd'}});
+    std::vector<Position> expectedPositions({{5, table::File('d')}, {4, table::File('b')}, {4, table::File('c')}
+        , {3, table::File('d')}, {2, table::File('d')}, {1, table::File('d')}});
     std::sort(availableMoves.begin(), availableMoves.end());
     std::sort(expectedPositions.begin(), expectedPositions.end());
 

@@ -32,7 +32,7 @@ protected:
 void KnightMoveCheckerTests::prepareBoard()
 {
     std::vector<table::Rank> ranks = {6, 5, 3, 2};
-    std::vector<table::File> files = {'c', 'c', 'e', 'c'};
+    std::vector<table::File> files = {table::File('c'), table::File('c'), table::File('e'), table::File('c')};
 
     ASSERT_EQ(ranks.size(), files.size());
 
@@ -79,7 +79,8 @@ TEST_P(KnightMoveCheckerTestsParametrized, ShouldFindAvailableMoves)
 
     auto availableMoves = sut->getAvailablePositions({mainFigureRank, mainFigureFile});
 
-    std::vector<Position> expectedPositions({{6, 'e'}, {5, 'f'}, {3, 'f'}, {2, 'e'}, {3, 'b'}, {5, 'b'}});
+    std::vector<Position> expectedPositions({{6, table::File('e')}, {5, table::File('f')}
+    , {3, table::File('f')}, {2, table::File('e')}, {3, table::File('b')}, {5, table::File('b')}});
     std::sort(availableMoves.begin(), availableMoves.end());
     std::sort(expectedPositions.begin(), expectedPositions.end());
 

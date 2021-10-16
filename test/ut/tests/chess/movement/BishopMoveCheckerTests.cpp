@@ -32,7 +32,7 @@ protected:
 void BishopMoveCheckerTests::prepareBoard()
 {
     std::vector<table::Rank> ranks = {6, 5, 2};
-    std::vector<table::File> files = {'b', 'e', 'b'};
+    std::vector<table::File> files = {table::File('b'), table::File('e'), table::File('b')};
 
     ASSERT_EQ(ranks.size(), files.size());
 
@@ -79,7 +79,8 @@ TEST_P(BishopMoveCheckerTestsParametrized, ShouldFindAvailableMoves)
 
     auto availableMoves = sut->getAvailablePositions({mainFigureRank, mainFigureFile});
 
-    std::vector<Position> expectedPositions({{5, 'c'}, {3, 'c'}, {3, 'e'}, {2, 'f'}, {1, 'g'}});
+    std::vector<Position> expectedPositions({{5, table::File('c')}, {3, table::File('c')}
+    , {3, table::File('e')}, {2, table::File('f')}, {1, table::File('g')}});
     std::sort(availableMoves.begin(), availableMoves.end());
     std::sort(expectedPositions.begin(), expectedPositions.end());
 

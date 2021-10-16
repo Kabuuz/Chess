@@ -31,7 +31,8 @@ protected:
 void PawnMoveCheckerTests::prepareBoard()
 {
     std::vector<table::Rank> ranks = {5, 5, 5, 4, 4, 3, 3, 3};
-    std::vector<table::File> files = {'c', 'd', 'e', 'c', 'e', 'c', 'd', 'e'};
+    std::vector<table::File> files = {table::File('c'), table::File('d'), table::File('e')
+        , table::File('c'), table::File('e'), table::File('c'), table::File('d'), table::File('e')};
 
     ASSERT_EQ(ranks.size(), files.size());
 
@@ -64,7 +65,7 @@ TEST_F(PawnMoveCheckerTests, WhiteShouldReturnOneSquare)
 
     constexpr int expecteNumberOfMoves = 1;
     const table::Rank expectedRank = 5;
-    const table::File expectedFile = 'd';
+    const table::File expectedFile = table::File('d');
 
     EXPECT_EQ(availableMoves.size(), expecteNumberOfMoves);
     EXPECT_THAT(availableMoves, ElementsAre(Pair(expectedRank, expectedFile)));
@@ -84,7 +85,7 @@ TEST_F(PawnMoveCheckerTests, BlackShouldReturnOneSquare)
 
     constexpr int expecteNumberOfMoves = 1;
     const table::Rank expectedRank = 3;
-    const table::File expectedFile = 'd';
+    const table::File expectedFile = table::File('d');
 
     EXPECT_EQ(availableMoves.size(), expecteNumberOfMoves);
     EXPECT_THAT(availableMoves, ElementsAre(Pair(expectedRank, expectedFile)));

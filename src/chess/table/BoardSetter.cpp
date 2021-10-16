@@ -105,7 +105,7 @@ FigurePositions BoardSetter::getWhiteFigurePositions(const figure::FigureType ty
 FigurePositions BoardSetter::getBlackPawnPositions()
 {
     FigurePositions positions;
-    for(File file='a'; file<MINIMAL_FILE+BOARD_WIDTH; file++)
+    for(File file=File('a'); file<MINIMAL_FILE+BOARD_WIDTH; file++)
     {
         positions.push_back({7,file});
     }
@@ -114,33 +114,33 @@ FigurePositions BoardSetter::getBlackPawnPositions()
 
 FigurePositions BoardSetter::getBlackRookPositions()
 {
-    return {{8,'a'},{8,'h'}};
+    return {{8,File('a')},{8,File('h')}};
 }
 
 FigurePositions BoardSetter::getBlackBishopPositions()
 {
-    return {{8,'c'},{8,'f'}};
+    return {{8,File('c')},{8,File('f')}};
 }
 
 FigurePositions BoardSetter::getBlackKnightPositions()
 {
-    return {{8,'b'},{8,'g'}};
+    return {{8,File('b')},{8,File('g')}};
 }
 
 FigurePositions BoardSetter::getBlackQueenPositions()
 {
-    return {{8,'d'}};
+    return {{8,File('d')}};
 }
 
 FigurePositions BoardSetter::getBlackKingPositions()
 {
-    return {{8,'e'}};
+    return {{8,File('e')}};
 }
 
 FigurePositions BoardSetter::getWhitePawnPositions()
 {
     FigurePositions positions;
-    for(File file='a'; file<MINIMAL_FILE+BOARD_WIDTH; file++)
+    for(File file=File('a'); file<MINIMAL_FILE+BOARD_WIDTH; file++)
     {
         positions.push_back({2,file});
     }
@@ -149,27 +149,27 @@ FigurePositions BoardSetter::getWhitePawnPositions()
 
 FigurePositions BoardSetter::getWhiteRookPositions()
 {
-    return {{1,'a'},{1,'h'}};
+    return {{1,File('a')},{1,File('h')}};
 }
 
 FigurePositions BoardSetter::getWhiteBishopPositions()
 {
-    return {{1,'c'},{1,'f'}};
+    return {{1,File('c')},{1,File('f')}};
 }
 
 FigurePositions BoardSetter::getWhiteKnightPositions()
 {
-    return {{1,'b'},{1,'g'}};
+    return {{1,File('b')},{1,File('g')}};
 }
 
 FigurePositions BoardSetter::getWhiteQueenPositions()
 {
-    return {{1,'d'}};
+    return {{1,File('d')}};
 }
 
 FigurePositions BoardSetter::getWhiteKingPositions()
 {
-    return {{1,'e'}};
+    return {{1,File('e')}};
 }
 
 }  // namespace table

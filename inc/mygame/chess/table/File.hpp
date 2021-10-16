@@ -10,8 +10,10 @@ namespace table
 class File
 {
 public:
-    File(int file);
-    File(char file);
+    explicit File(int file);
+    explicit File(char file);
+    File(const File& other);
+    File& operator=(const File& other);
 
     operator int() const;
     operator char() const;
