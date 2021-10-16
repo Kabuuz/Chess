@@ -6,6 +6,10 @@ namespace chess
 namespace player
 {
 
+Player::Player(table::Table& table)
+    : table_(table)
+{}
+
 void Player::makeMove(const IMove& move) const
 {
     move.make();
