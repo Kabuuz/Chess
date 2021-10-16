@@ -26,8 +26,8 @@ class FigureBase
 public:
     FigureBase(FigureType type, FigureColor color);
 
-    FigureType getType();
-    FigureColor getColor();
+    FigureType getType() const;
+    FigureColor getColor() const;
 
     virtual ~FigureBase() = default;
 

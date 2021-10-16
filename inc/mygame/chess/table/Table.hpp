@@ -18,12 +18,18 @@ public:
 
     Board& getBoard();
     CapturedFiguresArea& getCapturedFiguresArea(figure::FigureColor color);
+    void addFigure(std::unique_ptr<figure::FigureBase> figure);
+    void reset();
 
 private:
     void createCapturedFiguresAreas();
+    void createAllFigures();
+    void resetBoard();
+    void resetCapturedFiguresAreas();
 
     std::unique_ptr<Board> board_;
     std::map<figure::FigureColor, std::unique_ptr<CapturedFiguresArea>> capturedFiguresAreas_;
+    std::vector<std::unique_ptr<figure::FigureBase>> figures_;
 };
 }  // namespace table
 }  // namespace chess

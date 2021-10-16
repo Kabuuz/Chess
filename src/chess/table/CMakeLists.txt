@@ -5,6 +5,7 @@ add_library(${LIB_NAME} OBJECT)
 target_sources(${LIB_NAME}
     PUBLIC
     ${INCLUDE_DIR}/mygame/chess/table/Board.hpp
+    ${INCLUDE_DIR}/mygame/chess/table/BoardSetter.hpp
     ${INCLUDE_DIR}/mygame/chess/table/CapturedFiguresArea.hpp
     ${INCLUDE_DIR}/mygame/chess/table/File.hpp
     ${INCLUDE_DIR}/mygame/chess/table/Rank.hpp
@@ -12,6 +13,7 @@ target_sources(${LIB_NAME}
 
     PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/Board.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/BoardSetter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/CapturedFiguresArea.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/File.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Rank.cpp

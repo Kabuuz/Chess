@@ -24,5 +24,16 @@ bool Board::isFigurePresent(const Rank& rank, const File& file)
     return figures_.at(rank).at(file) == nullptr;
 }
 
+void Board::reset()
+{
+    for(Rank rank=MINIMAL_RANK; rank<MINIMAL_RANK+BOARD_HEIGHT; rank++)
+    {
+        for(File file=MINIMAL_FILE; file<MINIMAL_FILE+BOARD_WIDTH; file++)
+        {
+            figures_.at(rank).at(file) = nullptr;
+        }
+    }
+}
+
 }  // namespace table
 }  // namespace chess

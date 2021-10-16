@@ -15,6 +15,9 @@ constexpr int BOARD_HEIGHT = 8;
 const Rank MINIMAL_RANK = 1;
 const File MINIMAL_FILE = 'A';
 
+//TODO move all "using Position" to fwd.hpp in table folder
+using Position = std::pair<table::Rank, table::File>;
+
 class Board
 {
 public:
@@ -23,6 +26,7 @@ public:
     figure::FigureBase* getFigure(const Rank& rank, const File& file);  //rank - rzad, file - kolumna
     void setFigure(figure::FigureBase* figure, const Rank& rank, const File& file);
     bool isFigurePresent(const Rank& rank, const File& file);
+    void reset();
 
 private:
     std::array<std::array<figure::FigureBase*, BOARD_HEIGHT>, BOARD_WIDTH> figures_;

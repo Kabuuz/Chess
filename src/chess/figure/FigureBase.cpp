@@ -9,12 +9,12 @@ FigureBase::FigureBase(FigureType type, FigureColor color)
 {
 }
 
-FigureType FigureBase::getType()
+FigureType FigureBase::getType() const
 {
     return type_;
 }
 
-FigureColor FigureBase::getColor()
+FigureColor FigureBase::getColor() const
 {
     return color_;
 }
