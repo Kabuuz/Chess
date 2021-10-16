@@ -19,5 +19,10 @@ FigureColor FigureBase::getColor() const
     return color_;
 }
 
+void FigureBase::changeType(FigureType type)
+{
+    type_ = type;
+}
+
 }  // namespace figure
 }  // namespace chess

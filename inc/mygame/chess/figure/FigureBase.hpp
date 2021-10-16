@@ -28,6 +28,7 @@ public:
 
     FigureType getType() const;
     FigureColor getColor() const;
+    void changeType(FigureType type);
 
     virtual ~FigureBase() = default;
 
